@@ -24,7 +24,7 @@ pip install -r requirements.txt
 Сохраните изменения в файле **test.py**.
 Запустите тесты, выполнив следующую команду в терминале из корня проекта:
 ```bazaar
-python -m pytest project/tests/test.py
+python -m pytest project/tests/test_suite.py
 ```
 ## Конфигурация
 В папке *framework/resourses* откройте файл **config.json** в любом текстовом редакторе.
