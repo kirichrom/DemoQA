@@ -8,6 +8,12 @@ from framework.utils.json_reader import JsonReader
 
 
 class BrowserFactory:
+    """
+    The Browser Factory is a class that provides a convenient way to create instances
+     of Selenium browser objects. It encapsulates the browser creation process and allows
+      flexibility in choosing the type of browser.
+    """
+
     @staticmethod
     def get_webdriver():
         browser_name = JsonReader().read_data('browser', 'browser_name')
@@ -24,4 +30,3 @@ class BrowserFactory:
             for option in browser_options:
                 chrome_options.add_argument(option)
             return webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
-

@@ -36,7 +36,3 @@ class Action:
         text_box = Wait.wait_element_presence(by_locator)
         text_box.clear()
         text_box.send_keys(text)
-
-    @staticmethod
-    def is_visible(by_locator) -> bool:
-        return Wait.wait_element_visible(by_locator).is_displayed()

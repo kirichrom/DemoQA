@@ -18,9 +18,3 @@ class Wait:
         element = WebDriverWait(Browser.get_driver(), JsonReader().read_data('browser', 'timeout')).until(
             EC.presence_of_element_located(by_locator))
         return element
-
-    @staticmethod
-    def wait_element_visible(by_locator):
-        element = WebDriverWait(Browser.get_driver(), JsonReader().read_data('browser', 'timeout')).until(
-            EC.visibility_of_element_located(by_locator))
-        return element

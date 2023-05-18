@@ -22,6 +22,3 @@ class BaseElement(ABC):
         :return:
         """
         return Action.get_data(self._by_locator)
-
-    def is_visible(self) -> bool:
-        return Action.is_visible(self._by_locator)
