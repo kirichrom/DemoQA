@@ -1,0 +1,11 @@
+{
+  "browser": {
+    "browser_name": "chrome",
+    "options": [
+      "--incognito",
+      "--lang=en",
+      "start-maximized"
+    ],
+    "timeout": 10
+  }
+}
