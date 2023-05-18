@@ -4,7 +4,7 @@ from faker import Faker
 fake = Faker()
 
 
-class DataGenerator:
+class UserGenerator:
 
     @staticmethod
     def generate_random_user():
@@ -17,4 +17,4 @@ class DataGenerator:
 
     @staticmethod
     def get_random_user():
-        return next(DataGenerator.generate_random_user())
+        return next(UserGenerator.generate_random_user())
