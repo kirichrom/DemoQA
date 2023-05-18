@@ -26,11 +26,13 @@ class TextBoxPage(BasePage):
         self.email_text_box = TextBox(self.EMAIL_TEXT_BOX_LOCATOR, 'Email text box')
         self.cur_address_text_box = TextBox(self.CUR_ADDRESS_TEXT_BOX_LOCATOR, 'Current Address text box')
         self.perm_address_text_box = TextBox(self.PERM_ADDRESS_TEXT_BOX_LOCATOR, 'Permanent Address text box')
-        self.submit_button = Button(self.SUBMIT_BUTTON_LOCATOR, 'Submit button')
+
         self.name_label = Label(self.NAME_LABEL_LOCATOR, 'Name label')
         self.email_label = Label(self.EMAIL_LABEL_LOCATOR, 'Email label')
         self.cur_address_label = Label(self.CUR_ADDRESS_LABEL_LOCATOR, 'Current Address label')
         self.perm_address_label = Label(self.PERM_ADDRESS_LABEL_LOCATOR, 'Permanent Address label')
+
+        self.submit_button = Button(self.SUBMIT_BUTTON_LOCATOR, 'Submit button')
 
     def fill_all_fields(self, user):
         self.user_name_text_box.send_text(user.full_name)

@@ -4,8 +4,8 @@ from framework.browser.browser_factory import BrowserFactory
 class Browser:
     """
     The Browser is a class that ensures the existence of only one instance
-    of the Selenium browser throughout the application. It follows the Singleton design pattern,
-    providing a global point of access to the browser object.
+    of the Selenium driver throughout the application. It follows the Singleton design pattern,
+    providing a global point of access to the driver object.
     """
     __driver = None
 

@@ -6,6 +6,10 @@ from framework.utils.json_reader import JsonReader
 
 
 class Wait:
+    """
+    The Wait class provides a set of methods for implementing driver wait functionality in a Selenium framework.
+    It allows users to wait for certain conditions to be satisfied before proceeding with the test execution.
+    """
 
     @staticmethod
     def wait_to_be_clickable(by_locator):
