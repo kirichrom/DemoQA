@@ -16,5 +16,5 @@ class UserGenerator:
         )
 
     @staticmethod
-    def get_random_user():
+    def get_random_user() -> User:
         return next(UserGenerator.generate_random_user())

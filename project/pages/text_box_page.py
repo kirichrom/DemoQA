@@ -4,6 +4,7 @@ from framework.elements.button import Button
 from framework.elements.label import Label
 from framework.elements.text_box import TextBox
 from framework.pages.base_page import BasePage
+from project.resources.user import User
 from project.utils.string_utils import StringUtils
 
 
@@ -22,28 +23,30 @@ class TextBoxPage(BasePage):
     def __init__(self):
         super().__init__(by_locator=TextBoxPage.TEXT_BOX_HEADER_LOCATOR, name=self.__class__.__name__)
 
-        self.user_name_text_box = TextBox(self.USER_NAME_TEXT_BOX_LOCATOR, 'User Name text box')
-        self.email_text_box = TextBox(self.EMAIL_TEXT_BOX_LOCATOR, 'Email text box')
-        self.cur_address_text_box = TextBox(self.CUR_ADDRESS_TEXT_BOX_LOCATOR, 'Current Address text box')
-        self.perm_address_text_box = TextBox(self.PERM_ADDRESS_TEXT_BOX_LOCATOR, 'Permanent Address text box')
+        self.user_name_text_box = TextBox(by_locator=self.USER_NAME_TEXT_BOX_LOCATOR, name='User Name text box')
+        self.email_text_box = TextBox(by_locator=self.EMAIL_TEXT_BOX_LOCATOR, name='Email text box')
+        self.cur_address_text_box = TextBox(by_locator=self.CUR_ADDRESS_TEXT_BOX_LOCATOR,
+                                            name='Current Address text box')
+        self.perm_address_text_box = TextBox(by_locator=self.PERM_ADDRESS_TEXT_BOX_LOCATOR,
+                                             name='Permanent Address text box')
 
-        self.name_label = Label(self.NAME_LABEL_LOCATOR, 'Name label')
-        self.email_label = Label(self.EMAIL_LABEL_LOCATOR, 'Email label')
-        self.cur_address_label = Label(self.CUR_ADDRESS_LABEL_LOCATOR, 'Current Address label')
-        self.perm_address_label = Label(self.PERM_ADDRESS_LABEL_LOCATOR, 'Permanent Address label')
+        self.name_label = Label(by_locator=self.NAME_LABEL_LOCATOR, name='Name label')
+        self.email_label = Label(by_locator=self.EMAIL_LABEL_LOCATOR, name='Email label')
+        self.cur_address_label = Label(by_locator=self.CUR_ADDRESS_LABEL_LOCATOR, name='Current Address label')
+        self.perm_address_label = Label(by_locator=self.PERM_ADDRESS_LABEL_LOCATOR, name='Permanent Address label')
 
-        self.submit_button = Button(self.SUBMIT_BUTTON_LOCATOR, 'Submit button')
+        self.submit_button = Button(by_locator=self.SUBMIT_BUTTON_LOCATOR, name='Submit button')
 
-    def fill_all_fields(self, user):
-        self.user_name_text_box.send_text(user.full_name)
-        self.email_text_box.send_text(user.email)
-        self.cur_address_text_box.send_text(user.current_address)
-        self.perm_address_text_box.send_text(user.permanent_address)
+    def fill_all_fields(self, user: User) -> None:
+        self.user_name_text_box.send_text(text=user.full_name)
+        self.email_text_box.send_text(text=user.email)
+        self.cur_address_text_box.send_text(text=user.current_address)
+        self.perm_address_text_box.send_text(text=user.permanent_address)
 
     def click_submit_button(self):
         self.submit_button.click()
 
-    def get_labels_list(self):
+    def get_labels_list(self) -> list:
         labels = [self.name_label.get_text(),
                   self.email_label.get_text(),
                   self.cur_address_label.get_text(),

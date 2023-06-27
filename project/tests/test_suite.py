@@ -19,7 +19,7 @@ class TestSuite:
                                                                user.permanent_address])
 
         # Filling all the fields with the user's information and clicking the "Submit" button
-        text_box_page.fill_all_fields(user)
+        text_box_page.fill_all_fields(user=user)
         text_box_page.click_submit_button()
         # Checking user information to see if it matches the labels on the web page
         assert text_box_page.get_labels_list() == user_attributes, 'The information does not match'

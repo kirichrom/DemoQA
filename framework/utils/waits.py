@@ -12,13 +12,14 @@ class Wait:
     """
 
     @staticmethod
-    def wait_to_be_clickable(by_locator):
+    def wait_to_be_clickable(by_locator: tuple):
         element = WebDriverWait(Browser.get_driver(), JsonReader().read_data('browser', 'timeout')).until(
             EC.element_to_be_clickable(by_locator))
         return element
 
     @staticmethod
     def wait_element_presence(by_locator):
-        element = WebDriverWait(Browser.get_driver(), JsonReader().read_data('browser', 'timeout')).until(
+        element = WebDriverWait(driver=Browser.get_driver(),
+                                timeout=JsonReader().read_data('browser', 'timeout')).until(
             EC.presence_of_element_located(by_locator))
         return element

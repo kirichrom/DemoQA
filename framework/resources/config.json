@@ -7,5 +7,6 @@
       "start-maximized"
     ],
     "timeout": 10
-  }
+  },
+  "root_path": "DemoQA"
 }
