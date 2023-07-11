@@ -18,3 +18,7 @@ class UserGenerator:
     @staticmethod
     def get_random_user() -> User:
         return next(UserGenerator.generate_random_user())
+
+    @staticmethod
+    def get_users_list(number: int) -> list:
+        return [UserGenerator.get_random_user() for _ in range(number)]

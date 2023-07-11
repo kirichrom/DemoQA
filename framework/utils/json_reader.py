@@ -5,7 +5,7 @@ from project.resources import path
 
 class JsonReader:
 
-    def read_data(self, *args, directory: str = path.framework_config_path):
+    def read_data(self, *args, directory: str = path.framework_config_path) -> str:
         data = self.open_data_file(directory).get(args[0])
         for arg in args[1:]:
             data = data.get(arg)

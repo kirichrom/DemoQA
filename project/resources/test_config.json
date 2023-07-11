@@ -1,5 +1,6 @@
 {
   "url": {
     "base_url": "https://demoqa.com/text-box"
-  }
+  },
+  "remove_ad": "document.getElementById(\"google_image_div\").remove()"
 }

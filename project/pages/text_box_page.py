@@ -43,7 +43,7 @@ class TextBoxPage(BasePage):
         self.cur_address_text_box.send_text(text=user.current_address)
         self.perm_address_text_box.send_text(text=user.permanent_address)
 
-    def click_submit_button(self):
+    def click_submit_button(self) -> None:
         self.submit_button.click()
 
     def get_labels_list(self) -> list:

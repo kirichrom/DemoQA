@@ -3,7 +3,7 @@ import pytest
 from framework.browser.browser import Browser
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(scope='function', autouse=True)
 def driver():
     web_driver = Browser.get_driver()
     yield web_driver
